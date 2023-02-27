@@ -1,0 +1,75 @@
+{
+  "address": "tyyuuu",
+  "application": [
+    {
+      "app_code": "realFix",
+      "application_domain": "https://autel-cloud-realfix-front-testus.autel.com"
+    },
+    {
+      "app_code": "sms",
+      "application_domain": "https://sms-web-testus.autel.com"
+    },
+    {
+      "app_code": "diagnosticreport",
+      "application_domain": "https://autel-cloud-battery-mgr-front-testus.autel.com"
+    },
+    {
+      "app_code": "portal",
+      "application_domain": "https://autelpro-front-testus.autel.com/userCenterLogin.html"
+    },
+    {
+      "app_code": "padbase",
+      "application_domain": "https://autel-cloud-pad-base-testus.autel.com"
+    },
+    {
+      "app_code": "webbase",
+      "application_domain": "https://autel-cloud-pc-web-base-testus.autel.com"
+    },
+    {
+      "app_code": "pc-component",
+      "application_domain": "https://autel-pc-component-testus.autel.com"
+    },
+    {
+      "app_code": "remoteexpert",
+      "application_domain": "https://diagnostic-mobile-company-web-testus.autel.com"
+    },
+    {
+      "app_code": "FreshdeskIM",
+      "application_domain": "https://evcharging.autel.com/chat/freshdesk.html"
+    },
+    {
+      "app_code": "devicemanagement",
+      "application_domain": "https://autel-cloud-drms-web-testus.autel.com"
+    }
+  ],
+  "autelId": "18729305131",
+  "avatar": "https://s3.us-west-2.amazonaws.com/default.auteltestus/1659944489831-20220808_074114_head_portrait.jpg",
+  "cc": "+1",
+  "city": "CUBA",
+  "country": "AMERICA",
+  "domain": "autel-cloud-gateway-testus.autel.com",
+  "email": "18291835866@163.com",
+  "env": "testus",
+  "iat": 1675734751,
+  "id": "1428917576534941697",
+  "isCountry": "1",
+  "isNew": 0,
+  "loginFrom": "DIA",
+  "nbf": 1675734751,
+  "needToComplete": false,
+  "needToRegister": false,
+  "nickname": "名姓",
+  "now": 1675734751741,
+  "phoneNumber": "18729305131",
+  "requiredCodeList": [],
+  "roles": "NORMAL_USER",
+  "serverCode": "TESTUS",
+  "sessionid": "0255460218582957",
+  "shopId": "",
+  "source": "0",
+  "state": "ALABAMA",
+  "token": "Bearer eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxNDI4OTE3NTc2NTM0OTQxNjk3IiwibmJmIjoxNjc1NzM0NzUxLCJhdXRlbElkIjoiMTg3MjkzMDUxMzEiLCJub3ciOjE2NzU3MzQ3NTE3NDEsInJvbGVzIjoiTk9STUFMX1VTRVIiLCJuaWNrbmFtZSI6IuWQjeWnkyIsImlkIjoxNDI4OTE3NTc2NTM0OTQxNjk3LCJsb2dpbkZyb20iOiJQQUQiLCJpYXQiOjE2NzU3MzQ3NTEsInNlcmlhbE5vIjoiVjFERzAwMDAwMTc1IiwidXNlcm5hbWUiOiJhdXRlbF9vU1VINlY3eWZXIn0.n30OUIcUKwxrIOsKYHUkLgNb6hCDJ4_rNXhSdFGpOzZD6My4uZrCEDgv6WlBZTJHTVA08ZJ1Hy6UV_NhdfQ4H-nx3cdudoNMm2TWov2a8YIf0TwyKdwBl7YpW1e9avIh6w7J5OARNt72pOyZnA83Qr1JO5EG2k6BwAvMZ8KjZZg",
+  "username": "autel_oSUH6V7yfW",
+  "workExperience": "",
+  "zip": "13764"
+}
