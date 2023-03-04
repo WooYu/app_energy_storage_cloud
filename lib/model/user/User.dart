@@ -50,6 +50,9 @@ class User with _$User {
   }) = _User;
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  // 命名构造函数
+  User.empty();
 }
 
 @freezed

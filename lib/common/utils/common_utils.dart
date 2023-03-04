@@ -11,6 +11,8 @@ import 'package:app_energy_storage_cloud/common/config/config.dart';
 import 'package:app_energy_storage_cloud/common/local/local_storage.dart';
 import 'package:app_energy_storage_cloud/common/localization/default_localizations.dart';
 import 'package:app_energy_storage_cloud/common/net/address.dart';
+import 'package:app_energy_storage_cloud/redux/gsy_state.dart';
+import 'package:app_energy_storage_cloud/redux/locale_redux.dart';
 import 'package:app_energy_storage_cloud/common/style/gsy_style.dart';
 import 'package:app_energy_storage_cloud/common/utils/navigator_utils.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -213,6 +215,38 @@ class CommonUtils {
       //   style: ButtonStyle(splashFactory: NoSplash.splashFactory),
       // ),
     );
+  }
+
+  static showLanguageDialog(BuildContext context) {
+    StringList list = [
+      GSYLocalizations.i18n(context)!.home_language_default,
+      GSYLocalizations.i18n(context)!.home_language_zh,
+      GSYLocalizations.i18n(context)!.home_language_en,
+    ];
+    CommonUtils.showCommitOptionDialog(context, list, (index) {
+      CommonUtils.changeLocale(StoreProvider.of<GSYState>(context), index);
+      LocalStorage.save(Config.LOCALE, index.toString());
+    }, height: 150.0);
+  }
+
+  /**
+   * 切换语言
+   */
+  static changeLocale(Store<GSYState> store, int index) {
+    Locale? locale = store.state.platformLocale;
+    if (Config.DEBUG!) {
+      print(store.state.platformLocale);
+    }
+    switch (index) {
+      case 1:
+        locale = Locale('zh', 'CH');
+        break;
+      case 2:
+        locale = Locale('en', 'US');
+        break;
+    }
+    curLocale = locale;
+    store.dispatch(RefreshLocaleAction(locale));
   }
 
   ///获取设备信息

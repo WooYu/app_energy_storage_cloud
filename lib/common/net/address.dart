@@ -20,4 +20,14 @@ class Address {
       return "";
     }
   }
+
+  ///我的用户信息 GET
+  static getMyUserInfo() {
+    return "${host}user";
+  }
+
+  ///用户信息 get
+  static getUserInfo(userName) {
+    return "${host}users/$userName";
+  }
 }

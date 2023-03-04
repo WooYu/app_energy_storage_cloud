@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:app_energy_storage_cloud/redux/gsy_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -8,12 +7,18 @@ import 'package:app_energy_storage_cloud/common/event/http_error_event.dart';
 import 'package:app_energy_storage_cloud/common/event/index.dart';
 import 'package:app_energy_storage_cloud/common/localization/default_localizations.dart';
 import 'package:app_energy_storage_cloud/common/localization/gsy_localizations_delegate.dart';
+// import 'package:app_energy_storage_cloud/page/debug/debug_label.dart';
+// import 'package:app_energy_storage_cloud/page/photoview_page.dart';
+import 'package:app_energy_storage_cloud/redux/gsy_state.dart';
+import 'package:app_energy_storage_cloud/model/user/User.dart';
 import 'package:app_energy_storage_cloud/common/style/gsy_style.dart';
 import 'package:app_energy_storage_cloud/common/utils/common_utils.dart';
+import 'package:app_energy_storage_cloud/page/home/home_page.dart';
+import 'package:app_energy_storage_cloud/page/login/login_page.dart';
+import 'package:app_energy_storage_cloud/page/welcome_page.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 import 'package:app_energy_storage_cloud/common/net/code.dart';
-import 'package:app_energy_storage_cloud/model/user/User.dart';
 
 import 'common/utils/navigator_utils.dart';
 
@@ -34,7 +39,7 @@ class _FlutterReduxAppState extends State<FlutterReduxApp>
 
     ///初始化数据
     initialState: new GSYState(
-        userInfo: User(),
+        userInfo: User.empty(),
         login: false,
         themeData: CommonUtils.getThemeData(GSYColors.primarySwatch),
         locale: Locale('zh', 'CH')),
@@ -111,24 +116,18 @@ class _FlutterReduxAppState extends State<FlutterReduxApp>
             ///⚠️ 所以比如你在 搜索页面 键盘弹出时，下面的 HomePage.sName 对应的 WidgetBuilder 会被触发
             ///⚠️ 这个是我故意的，如果不需要，可以去掉 pageContainer 或者不要用这里的 context
             routes: {
-              // WelcomePage.sName: (context) {
-              //   _context = context;
-              //   DebugLabel.showDebugLabel(context);
-              //   return WelcomePage();
-              // },
-              // HomePage.sName: (context) {
-              //   _context = context;
-              //   return NavigatorUtils.pageContainer(new HomePage(), context);
-              // },
-              // LoginPage.sName: (context) {
-              //   _context = context;
-              //   return NavigatorUtils.pageContainer(new LoginPage(), context);
-              // },
-
-              // ///使用 ModalRoute.of(context).settings.arguments; 获取参数
-              // PhotoViewPage.sName: (context) {
-              //   return PhotoViewPage();
-              // },
+              WelcomePage.sName: (context) {
+                _context = context;
+                return WelcomePage();
+              },
+              HomePage.sName: (context) {
+                _context = context;
+                return NavigatorUtils.pageContainer(new HomePage(), context);
+              },
+              LoginPage.sName: (context) {
+                _context = context;
+                return NavigatorUtils.pageContainer(new LoginPage(), context);
+              },
             });
 
         if (store.state.grey) {
