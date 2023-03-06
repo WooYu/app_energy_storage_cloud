@@ -7,7 +7,7 @@ import 'package:app_energy_storage_cloud/env/config_wrapper.dart';
 import 'package:app_energy_storage_cloud/env/env_config.dart';
 import 'package:app_energy_storage_cloud/page/error_page.dart';
 
-import 'env/prod.dart';
+import 'env/dev.dart';
 
 void main() {
   ///屏幕刷新率和显示率不一致时的优化
