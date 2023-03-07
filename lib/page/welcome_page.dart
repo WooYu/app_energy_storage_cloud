@@ -60,7 +60,9 @@ class _WelcomePageState extends State<WelcomePage> {
               children: <Widget>[
                 new Center(
                   child: new Image(
-                      image: new AssetImage('static/images/logo_autel.png')),
+                    image: new AssetImage('static/images/logo_autel.png'),
+                    width: 250,
+                  ),
                 )
               ],
             ),
