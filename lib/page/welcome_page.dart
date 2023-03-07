@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:app_energy_storage_cloud/common/localization/default_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -33,40 +34,43 @@ class _WelcomePageState extends State<WelcomePage> {
       return;
     }
     hadInit = true;
-
-    Store<GSYState> store = StoreProvider.of(context);
-
-    new Future.delayed(const Duration(seconds: 2), () {
-      UserDao.initUserInfo(store).then((res) {
-        if (res != null && res.result) {
-          NavigatorUtils.goHome(context);
-        } else {
-          NavigatorUtils.goLogin(context);
-        }
-        return true;
-      });
-    });
   }
 
   @override
   Widget build(BuildContext context) {
     return StoreBuilder<GSYState>(
       builder: (context, store) {
-        double size = 200;
-        return Material(
-          child: new Container(
-            color: GSYColors.white,
-            child: Stack(
-              children: <Widget>[
-                new Center(
-                  child: new Image(
-                    image: new AssetImage('static/images/logo_autel.png'),
-                    width: 250,
-                  ),
-                )
-              ],
+        return Flex(
+          direction: Axis.vertical,
+          children: <Widget>[
+            //图片
+            Image(image: AssetImage("images/ic_logo_pager.png")),
+            //欢迎标语
+            Expanded(
+                flex: 1,
+                child: Column(
+                  children: [
+                    Padding(
+                        padding: EdgeInsets.only(top: 20),
+                        child: Text(
+                            GSYLocalizations.i18n(context)!.welcomeTitleA)),
+                    SizedBox(height: 10),
+                    Text(GSYLocalizations.i18n(context)!.welcomeTitleB)
+                  ],
+                )),
+            //注册
+            SizedBox(height: 30),
+            ElevatedButton(
+              child: Text(GSYLocalizations.i18n(context)!.welcomeBtnRegister),
+              onPressed: () {},
             ),
-          ),
+            //登录
+            SizedBox(height: 30),
+            ElevatedButton(
+              child: Text(GSYLocalizations.i18n(context)!.welcomeBtnLogin),
+              onPressed: () {},
+            ),
+          ],
         );
       },
     );

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:app_energy_storage_cloud/page/home/home_page.dart';
 import 'package:app_energy_storage_cloud/page/login/login_page.dart';
+import 'package:app_energy_storage_cloud/page/welcome_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_energy_storage_cloud/widget/never_overscroll_indicator.dart';
@@ -116,13 +117,18 @@ class NavigatorUtils {
         });
   }
 
-  ///主页
-  static goHome(BuildContext context) {
-    Navigator.pushReplacementNamed(context, HomePage.sName);
+  ///欢迎页
+  static goWelcome(BuildContext context) {
+    Navigator.pushReplacementNamed(context, WelcomePage.sName);
   }
 
   ///登录页
   static goLogin(BuildContext context) {
     Navigator.pushReplacementNamed(context, LoginPage.sName);
+  }
+
+  ///主页
+  static goHome(BuildContext context) {
+    Navigator.pushReplacementNamed(context, HomePage.sName);
   }
 }

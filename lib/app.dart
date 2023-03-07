@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:app_energy_storage_cloud/page/splash_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -116,9 +117,13 @@ class _FlutterReduxAppState extends State<FlutterReduxApp>
             ///⚠️ 所以比如你在 搜索页面 键盘弹出时，下面的 HomePage.sName 对应的 WidgetBuilder 会被触发
             ///⚠️ 这个是我故意的，如果不需要，可以去掉 pageContainer 或者不要用这里的 context
             routes: {
+              SplashPage.sName: (context) {
+                _context = context;
+                return SplashPage();
+              },
               WelcomePage.sName: (context) {
                 _context = context;
-                return WelcomePage();
+                return NavigatorUtils.pageContainer(new WelcomePage(), context);
               },
               HomePage.sName: (context) {
                 _context = context;

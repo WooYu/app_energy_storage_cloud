@@ -3,6 +3,14 @@
  * Date: 2018-08-15
  */
 abstract class GSYStringBase {
+  /**
+   * 欢迎页
+   */
+  String get welcomeTitleA;
+  String get welcomeTitleB;
+  String get welcomeBtnLogin;
+  String get welcomeBtnRegister;
+
   String get welcomeMessage;
 
   String get app_name;

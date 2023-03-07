@@ -5,6 +5,18 @@ import 'package:app_energy_storage_cloud/common/localization/gsy_string_base.dar
  * Date: 2018-08-15
  */
 class GSYStringZh extends GSYStringBase {
+  /**
+   * 欢迎页
+   */
+  @override
+  String welcomeTitleA = "欢迎来到道通充电";
+  @override
+  String welcomeTitleB = "绿色能源，驱动未来";
+  @override
+  String welcomeBtnLogin = "登录";
+  @override
+  String welcomeBtnRegister = "注册";
+
   @override
   String welcomeMessage = "Welcome To Flutter";
 
