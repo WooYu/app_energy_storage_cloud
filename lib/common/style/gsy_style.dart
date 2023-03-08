@@ -27,12 +27,13 @@ class GSYColors {
   static const String actionBlueString = "#267aff";
   static const String webDraculaBackgroundColorString = "#282a36";
 
-  static const Color primaryValue = Color(0xFF24292E);
-  static const Color primaryLightValue = Color(0xFF42464b);
-  static const Color primaryDarkValue = Color(0xFF121917);
+  static const Color primaryValue = Color(0xFF34C759);
+  static const Color primaryLightValue = Color(0xFF2CBE51);
+  static const Color primaryDarkValue = Color(0xFF0E9830);
 
   static const Color cardWhite = Color(0xFFFFFFFF);
   static const Color textWhite = Color(0xFFFFFFFF);
+  static const Color textBlack = Color(0xFF000000);
   static const Color miWhite = Color(0xffececec);
   static const Color white = Color(0xFFFFFFFF);
   static const Color actionBlue = Color(0xff267aff);

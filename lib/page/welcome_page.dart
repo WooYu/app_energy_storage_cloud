@@ -40,37 +40,128 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return StoreBuilder<GSYState>(
       builder: (context, store) {
-        return Flex(
-          direction: Axis.vertical,
-          children: <Widget>[
-            //图片
-            Image(image: AssetImage("images/ic_logo_pager.png")),
-            //欢迎标语
-            Expanded(
-                flex: 1,
-                child: Column(
-                  children: [
-                    Padding(
-                        padding: EdgeInsets.only(top: 20),
-                        child: Text(
-                            GSYLocalizations.i18n(context)!.welcomeTitleA)),
-                    SizedBox(height: 10),
-                    Text(GSYLocalizations.i18n(context)!.welcomeTitleB)
-                  ],
-                )),
-            //注册
-            SizedBox(height: 30),
-            ElevatedButton(
-              child: Text(GSYLocalizations.i18n(context)!.welcomeBtnRegister),
-              onPressed: () {},
+        return Material(
+          child: new Container(
+            color: GSYColors.white,
+            constraints: BoxConstraints(
+                maxWidth: double.infinity, maxHeight: double.infinity),
+            child: new ConstrainedBox(
+              constraints: BoxConstraints(
+                  maxHeight: double.infinity, maxWidth: double.infinity),
+              child: Flex(
+                direction: Axis.vertical,
+                children: <Widget>[
+                  //图片
+                  Container(
+                    margin: EdgeInsets.only(top: 40),
+                    child: Image(
+                        image: AssetImage("static/images/ic_logo_pager.png")),
+                  ),
+
+                  //欢迎标语
+                  Expanded(
+                      flex: 1,
+                      child: Container(
+                        alignment: Alignment.topLeft,
+                        padding: EdgeInsets.only(left: 10, right: 10, top: 30),
+                        child: Column(
+                          children: [
+                            Container(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                  GSYLocalizations.i18n(context)!.welcomeTitleA,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: GSYColors.textBlack,
+                                      fontSize: 18)),
+                            ),
+                            SizedBox(height: 10),
+                            Container(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                  GSYLocalizations.i18n(context)!.welcomeTitleB,
+                                  style: TextStyle(
+                                      color: Colors.black26, fontSize: 15)),
+                            ),
+                          ],
+                        ),
+                      )),
+
+                  //注册、登录
+                  Container(
+                    color: GSYColors.white,
+                    child: Padding(
+                      padding: const EdgeInsets.only(bottom: 20),
+                      child: Column(
+                        children: <Widget>[
+                          //注册
+                          Container(
+                            margin: EdgeInsets.only(left: 10.0, right: 10),
+                            child: TextButton(
+                                style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                    tapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap),
+                                onPressed: () {},
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25.0),
+                                    color: GSYColors.primaryValue,
+                                  ),
+                                  child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                          minWidth: double.infinity),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(10.0),
+                                        child: Text(
+                                            GSYLocalizations.i18n(context)!
+                                                .welcomeBtnRegister,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color: GSYColors.white,
+                                                fontSize: 15)),
+                                      )),
+                                )),
+                          ),
+
+                          //登录
+                          Container(
+                            margin:
+                                EdgeInsets.only(left: 10, right: 10, top: 10),
+                            child: TextButton(
+                                style: TextButton.styleFrom(
+                                    padding: EdgeInsets.zero,
+                                    tapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap),
+                                onPressed: () {},
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25.0),
+                                    color: GSYColors.primaryValue,
+                                  ),
+                                  child: ConstrainedBox(
+                                      constraints: BoxConstraints(
+                                          minWidth: double.infinity),
+                                      child: Padding(
+                                        padding: EdgeInsets.all(10.0),
+                                        child: Text(
+                                            GSYLocalizations.i18n(context)!
+                                                .welcomeBtnLogin,
+                                            textAlign: TextAlign.center,
+                                            style: TextStyle(
+                                                color: GSYColors.white,
+                                                fontSize: 15)),
+                                      )),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-            //登录
-            SizedBox(height: 30),
-            ElevatedButton(
-              child: Text(GSYLocalizations.i18n(context)!.welcomeBtnLogin),
-              onPressed: () {},
-            ),
-          ],
+          ),
         );
       },
     );
