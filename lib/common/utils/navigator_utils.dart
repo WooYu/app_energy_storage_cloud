@@ -127,6 +127,11 @@ class NavigatorUtils {
     Navigator.pushReplacementNamed(context, LoginPage.sName);
   }
 
+  ///登录页（可以后退）
+  static goLogin2(BuildContext context) {
+    Navigator.pushNamed(context, LoginPage.sName);
+  }
+
   ///主页
   static goHome(BuildContext context) {
     Navigator.pushReplacementNamed(context, HomePage.sName);

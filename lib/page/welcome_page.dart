@@ -133,7 +133,9 @@ class _WelcomePageState extends State<WelcomePage> {
                                     padding: EdgeInsets.zero,
                                     tapTargetSize:
                                         MaterialTapTargetSize.shrinkWrap),
-                                onPressed: () {},
+                                onPressed: () {
+                                  NavigatorUtils.goLogin2(context);
+                                },
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(25.0),
